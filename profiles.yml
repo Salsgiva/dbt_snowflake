@@ -1,0 +1,33 @@
+config:
+  send_anonymous_usage_stats: False
+
+default:
+  outputs:
+
+    dev: # User-Password config
+      type: snowflake
+      account: collibra_partner
+      user: PC_DBT_USER
+      password: W2.Collibra
+      role: PC_DBT_ROLE
+      database: PC_DBT_DB
+      warehouse: PC_DBT_WH
+      schema: dbt_development
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: dbt_development
+
+    prod: # User-Password config
+      type: snowflake
+      account: collibra_partner
+      user: PC_DBT_USER
+      password: W2.Collibra
+      role: PC_DBT_ROLE
+      database: PC_DBT_DB
+      warehouse: PC_DBT_WH
+      schema: dbt_production
+      threads: 1
+      client_session_keep_alive: False
+      query_tag: dbt_production
+
+  target: dev
